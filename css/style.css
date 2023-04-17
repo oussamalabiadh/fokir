@@ -1,0 +1,863 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
+/* ================ Reset ================ */
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   list-style: none;
+   text-decoration: none;
+   text-transform: capitalize;
+}
+
+body {
+   font-family: "Source Sans Pro", sans-serif;
+   color: #222;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+   width: 10px;
+}
+
+::-webkit-scrollbar-track {
+   background-color: #555;
+}
+
+::-webkit-scrollbar-thumb {
+   background-color: #000;
+}
+
+img {
+   width: 100%;
+   display: block;
+}
+
+.clr {
+   clear: both;
+}
+
+.tm-color {
+   color: rgb(255, 48, 91);
+}
+
+/* ================ Container  ================ */
+.container {
+   margin: auto;
+   padding: 0 15px;
+}
+
+@media (min-width: 576px) {
+   .container {
+      width: 540px;
+   }
+}
+@media (min-width: 768px) {
+   .container {
+      width: 720px;
+   }
+}
+@media (min-width: 992px) {
+   .container {
+      width: 960px;
+   }
+}
+@media (min-width: 1200px) {
+   .container {
+      width: 1140px;
+   }
+}
+@media (min-width: 1400px) {
+   .container {
+      width: 1320px;
+   }
+}
+
+/* <!-- ================  Landing ================ --> */
+.landing {
+   position: relative;
+   background: url("../images/home.jpg") center / cover no-repeat;
+   min-height: 100vh;
+   z-index: 1;
+   color: #fff;
+}
+
+.landing::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background-color: rgb(0 0 0 / 0.75);
+   z-index: -1;
+}
+
+.landing .navbar {
+   height: 80px;
+   line-height: 80px; /* same height [Navbar] to center li verticale*/
+   position: fixed;
+   z-index: 99;
+   top: 0;
+   width: 100%;
+   background-color: rgb(0 0 0 / 0.75);
+}
+
+.landing .navbar .logo {
+   float: left;
+   font-size: 30px;
+}
+
+/* ##### Custome Nav Menu icon  #####*/
+input[type="checkbox"] {
+   display: none;
+   appearance: none;
+}
+
+.nav-icon {
+   font-size: 30px;
+   color: rgb(255, 48, 91);
+   cursor: pointer;
+   float: right;
+   display: none;
+}
+
+.nav-icon i {
+   line-height: 80px; /* same height [Navbar] to center i vertical*/
+}
+/* ##### End Custome Nav Menu icon ##### */
+
+.landing .navbar .nav-menu {
+   float: right;
+}
+
+.landing .navbar li {
+   display: inline-block;
+}
+
+.landing .navbar li a {
+   color: #fff;
+   font-size: 24px;
+   padding: 10px;
+   font-weight: 300;
+   transition: color 0.5s;
+}
+
+.landing .navbar li a:hover {
+   color: rgb(255, 48, 91);
+}
+
+.landing .navbar li a.active {
+   color: rgb(255, 48, 91);
+   font-weight: bold;
+}
+
+.landing .landing-content {
+   position: absolute;
+   top: 50%;
+   left: 0;
+   transform: translateY(-50%);
+   text-align: center;
+   font-size: 25px;
+   width: 100%;
+}
+
+.landing .landing-content h1 {
+   font-size: 100px;
+}
+
+/* <!-- ================ End Landing ================ --> */
+
+/* <!-- ================  About ================ --> */
+.about {
+   padding: 70px 0;
+}
+
+.about .about-img {
+   width: 40%;
+   float: left;
+}
+
+.about .about-info {
+   width: 60%;
+   float: left;
+}
+
+.about .image-frame {
+   border: 7px solid rgb(51, 51, 51);
+   border-radius: 10px;
+   width: 80%;
+   margin-left: auto;
+}
+
+.about .about-img .image {
+   transform: translate(20px, 20px);
+   position: relative;
+   border-radius: inherit; /* inherit radius from direct parent*/
+   overflow: hidden;
+}
+
+.about .about-img .image .layer {
+   position: absolute;
+   top: 100%;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgb(0 0 0 / 0.5);
+   transition: top 0.7s;
+}
+
+.about .about-img .image:hover .layer {
+   top: 0;
+}
+
+.about .about-img .image .layer .social {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 100%;
+   text-align: center;
+}
+
+.about .about-img .image .layer .social li {
+   display: inline-block;
+}
+
+.about .about-img .image .layer .social li a {
+   color: #fff;
+   font-size: 30px;
+   margin: 0 10px;
+}
+
+.about .about-info {
+   padding-left: 80px;
+   color: #555;
+   line-height: 1.6;
+}
+
+.about .about-info h2 {
+   color: #000;
+   font-size: 30px;
+}
+
+.about .about-info p {
+   padding: 20px 0;
+}
+
+.about .about-info .personal-info {
+   float: left;
+   width: 50%;
+}
+
+.about .about-info .personal-info span {
+   font-weight: bold;
+}
+
+.about .about-info .personal-info li {
+   padding: 10px;
+}
+
+.about .about-info .personal-info li a {
+   color: inherit;
+}
+
+.about .about-info .btns-about a {
+   display: inline-block;
+   background-color: rgb(255, 48, 91);
+   border-radius: 5px;
+   color: #fff;
+   padding: 10px 30px;
+   font-size: 20px;
+   cursor: pointer;
+   margin-right: 10px;
+   margin-bottom: 10px;
+   transition: background-color 0.5s;
+}
+
+.about .about-info .btns-about a:hover {
+   background-color: rgb(150, 29, 53);
+}
+
+.about .about-info .btns-about a i {
+   margin-left: 10px;
+}
+
+/* <!-- ================ End About ================ --> */
+
+/* ######## title  ########*/
+
+.title {
+   text-align: center;
+   font-size: 30px;
+   margin-bottom: 60px;
+}
+
+.title .brdr {
+   width: 180px;
+   height: 1px;
+   margin: 20px auto;
+   background-color: rgb(255, 48, 91);
+   position: relative;
+}
+
+.title .brdr::before,
+.title .brdr::after {
+   content: "";
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 120px;
+   height: 1px;
+   background-color: rgb(255, 48, 91);
+}
+
+.title .brdr::before {
+   bottom: 7px;
+}
+
+.title .brdr::after {
+   top: 7px;
+}
+/* End ######## title  ########*/
+
+/* <!-- ================  Services ================ --> */
+.services {
+   padding: 70px 0;
+   background-color: rgb(241, 241, 241);
+}
+
+.services .services-area .item {
+   width: 25%;
+   float: left;
+   padding: 30px 10px;
+   text-align: center;
+   font-size: 25px;
+   transition: background-color 0.7s, box-shadow 0.7s;
+}
+
+.services .services-area .item:hover {
+   box-shadow: 0 0 10px rgb(0 0 0 / 0.2);
+   background-color: #fff;
+}
+
+.services .services-area .item i {
+   color: rgb(255, 48, 91);
+   transition: transform 0.7s 0.3s;
+}
+
+.services .services-area .item:hover i {
+   transform: scale(1.5);
+}
+
+.services .services-area .item h3 {
+   padding: 20px 0;
+}
+
+.services .services-area .item p {
+   font-size: 15px;
+}
+/* <!-- ================ End Services ================ --> */
+
+/* <!-- ================  Portfolio ================ --> */
+.portfolio {
+   padding: 70px 0;
+}
+
+.portfolio .protfolio-area {
+   text-align: center;
+}
+
+.portfolio .protfolio-area .nav li {
+   display: inline-block;
+   margin-bottom: 40px;
+}
+
+.portfolio .protfolio-area .nav li a {
+   color: inherit;
+   font-size: 22px;
+   padding: 0 10px;
+}
+
+.portfolio .protfolio-area .nav li a.active {
+   color: rgb(255, 48, 91);
+}
+
+.portfolio .portfolio-items .item {
+   width: 33.33%;
+   float: left;
+   padding: 10px;
+}
+
+.portfolio .portfolio-items .item .image {
+   position: relative;
+   border-radius: 5px;
+   overflow: hidden;
+}
+
+.portfolio .portfolio-items .item .image .layer {
+   position: absolute;
+   inset: 0;
+   opacity: 0;
+   background-color: rgb(0 0 0 / 0.5);
+   color: rgb(255, 48, 91);
+   font-size: 25px;
+   transition: opacity 0.7s;
+}
+
+.portfolio .portfolio-items .item .image:hover .layer {
+   opacity: 1;
+}
+
+.portfolio .portfolio-items .item .image .layer i {
+   position: absolute;
+   bottom: 25px;
+   right: 25px;
+}
+
+.counter {
+   padding: 70px 0;
+   text-align: center;
+   font-size: 22px;
+   background-color: rgb(241, 241, 241);
+}
+
+.counter .item {
+   float: left;
+   width: 25%;
+   padding: 10px;
+}
+
+.counter .item i {
+   color: rgb(255, 48, 91);
+   font-size: 30px;
+}
+
+.counter .item h3 {
+   padding: 15px 0;
+}
+
+/* <!-- ================ End Portfolio ================ --> */
+
+/* <!-- ================  Testimonial ================ --> */
+.testimonial {
+   padding: 70px 0;
+}
+
+.testimonial .test-area {
+   width: 70%;
+   margin: auto;
+   background-image: linear-gradient(135deg, rgb(255, 48, 91) 20%, rgb(241, 241, 241) 20%);
+   padding: 50px;
+   border-radius: 10px;
+}
+
+.testimonial .test-area .test-img {
+   width: 110px;
+   float: left;
+   overflow: hidden;
+   border-radius: 50%;
+}
+
+.testimonial .test-area .test-info {
+   width: calc(100% - 150px);
+   padding-left: 30px;
+   float: left;
+   font-size: 20px;
+}
+
+.testimonial .test-area .test-info h3 {
+   font-size: 30px;
+}
+
+.testimonial .test-area .test-info span {
+   display: inline-block;
+   padding: 10px 0;
+}
+
+.testimonial .test-area .test-info ul.stars li {
+   display: inline-block;
+   color: gold;
+   margin-top: 20px;
+}
+
+.testimonial .bullet {
+   width: fit-content;
+   margin: 15px auto;
+}
+
+.testimonial .bullet span {
+   display: inline-block;
+   width: 12px;
+   height: 12px;
+   border-radius: 50px;
+   border: 1px solid rgb(255, 48, 91);
+}
+
+.testimonial .bullet span:last-child {
+   width: 30px;
+   background-color: rgb(255, 48, 91);
+}
+/* <!-- ================ End Testimonial ================ --> */
+
+/* <!-- ================  Blog ================ --> */
+.blog {
+   padding: 70px 0;
+   background-color: rgb(241, 241, 241);
+}
+
+.blog .card {
+   float: left;
+   width: calc(100% / 3);
+   padding: 20px;
+}
+
+.blog .card img,
+.blog .card iframe {
+   height: 220px;
+}
+
+.blog .card .layer {
+   background-color: #fff;
+   border-radius: 10px;
+   overflow: hidden;
+}
+
+.blog .card .card-body {
+   padding: 10px;
+}
+
+.blog .card .card-body h3 {
+   padding: 10px 0;
+   font-size: 22px;
+}
+
+.blog .card .card-body p {
+   line-height: 1.6;
+}
+
+.blog .card .card-body a {
+   display: inline-block;
+   color: inherit;
+   font-size: 18px;
+   margin: 20px 0;
+}
+
+.blog .card .layer h3,
+.blog .card .layer a {
+   transition: color 0.7s;
+}
+
+.blog .card .layer h3:hover,
+.blog .card .layer a:hover {
+   color: rgb(255, 48, 91);
+}
+/* <!-- ================ End Blog ================ --> */
+
+/* <!-- ================  Contact ================ --> */
+
+.contact {
+   padding: 70px 0;
+}
+
+form.contact-area {
+   width: 70%;
+   margin: auto;
+}
+
+
+
+form.contact-area :is(input , textarea) {
+   /* Use is to select many element inside form */
+   display: block;
+   width: 100%;
+   padding: 10px;
+   border-radius: 5px;
+   border: 1px solid #adadad;
+}
+
+form.contact-area :is(input, textarea):focus {
+   outline: none;
+}
+
+form.contact-area textarea {
+   resize: none;
+   height: 140px;
+}
+
+form.contact-area .data-form {
+   float: left;
+   width: 100%;
+   padding: 10px;
+}
+
+form.contact-area .data-form:nth-child(-n + 2) {
+   width: 50%;
+}
+
+form.contact-area button {
+   margin: 10px;
+   padding: 10px 20px;
+   background-color: rgb(255, 48, 91);
+   color: #fff;
+   cursor: pointer;
+   border-radius: 5px;
+   border: unset;
+}
+/* <!-- ================ End Contact ================ --> */
+
+/* <!-- ================  Copy Right ================ --> */
+
+.copy-right {
+   padding: 70px 0;
+   background-color: rgb(51, 51, 51);
+   text-align: center;
+   color: #fff;
+}
+
+.copy-right ul li {
+   display: inline-block;
+}
+
+.copy-right ul li a {
+   display: inline-block;
+   font-size: 35px;
+   margin: 10px;
+   transition: color 0.5s;
+   color: inherit;
+}
+
+.copy-right ul li a:hover {
+   color: rgb(255, 48, 91);
+}
+
+.copy-right span {
+   color: rgb(255, 48, 91);
+}
+/* <!-- ================ End Copy Right ================ --> */
+
+/* <!-- ================ RWD ================ --> */
+@media screen and (max-width: 1199.98px) {
+   .services .services-area .item {
+      width: 50%;
+   }
+}
+
+@media screen and (max-width: 991.98px) {
+   /* Nav Bar  */
+   .nav-icon {
+      display: block;
+   }
+
+   .landing .navbar .nav-menu {
+      float: none;
+      position: absolute;
+      top: 100%;
+      background-color: rgb(0 0 0 / 0.75);
+      width: 100%;
+      height: calc(100vh - 80px);
+      left: 0;
+      text-align: center;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.7s;
+   }
+
+   .landing .navbar .nav-menu li {
+      display: block;
+      line-height: normal;
+      padding: 5px;
+   }
+
+   .landing .navbar li a {
+      display: block;
+      background-color: #adadad;
+   }
+
+   #menu:checked + .nav-menu {
+      display: block;
+      max-height: 100vh;
+   }
+
+   /* End Nav Bar  */
+
+   .about .about-img,
+   .about .about-info,
+   form.contact-area,
+   .testimonial .test-area {
+      width: 100%;
+   }
+
+   .about .image-frame {
+      width: 100%;
+      border: none;
+   }
+
+   .about .about-img .image {
+      transform: none;
+   }
+
+   .about .about-info {
+      padding-left: unset;
+   }
+
+   .portfolio .portfolio-items .item,
+   .counter .item {
+      width: 50%;
+   }
+
+   .blog .card {
+      width: 50%;
+   }
+}
+
+@media screen and (max-width: 767.98px) {
+   .services .services-area .item,
+   .portfolio .portfolio-items .item,
+   .testimonial .test-area .test-info,
+   .blog .card {
+      width: 100%;
+   }
+
+   .testimonial .test-area {
+      padding: 20px;
+   }
+
+   .testimonial .test-area .test-img {
+      width: 200px;
+      float: unset;
+      margin: auto;
+   }
+
+   .testimonial .test-area .test-info {
+      text-align: center;
+   }
+}
+
+@media screen and (max-width: 575.98px) {
+   .counter .item,
+   form.contact-area .data-form:nth-child(-n + 2),
+   .about .about-info .personal-info {
+      width: 100%;
+   }
+
+   .landing .landing-content h1 {
+      font-size: 50px;
+   }
+
+   h2 {
+      font-size: 27px;
+   }
+}
+
+/* When Design For [Moblie First] Use (min-width) Not (max-width)  */
+
+/* @media screen and (min-width:576px) {
+   
+}
+@media screen and (min-width:768px) {
+   
+}
+@media screen and (min-width:992px) {
+   
+}
+@media screen and (min-width:1200px) {
+   
+} */
+/* <!-- ================ End RWD ================ --> */
+.landing-content p::after{
+   content: " ";
+   animation: fokir 10s infinite;
+}
+@keyframes fokir {
+   0%{content:" |";}
+   1%{content:"D|";}
+   2%{content:"De|";}
+   3%{content:"Des|";}
+   4%{content:"Desi|";}
+   5%{content:"Desig|";}
+   6%{content:"Design|";}
+   7%{content:"Designe|";}
+   8%{content:"Designer|";}
+   9%{content:"Designe|";}
+   10%{content:"Design|";}
+   11%{content:"Desig|";}
+   12%{content:"Desi|";}
+   13%{content:"Des|";}
+   14%{content:"De|";}
+   15%{content:"D|";}
+   16%{content:"|";}
+   17%{content:"D|";}
+   18%{content:"De|";}
+   19%{content:"Dev|";}
+   20%{content:"Deve|";}
+   21%{content:"Devel|";}
+   22%{content:"Develo|";}
+   23%{content:"Develop|";}
+   24%{content:"Develope|";}
+   25%{content:"Developer|";}
+   26%{content:"Develope|";}
+   27%{content:"Develop|";}
+   28%{content:"Develo|";}
+   29%{content:"Devel|";}
+   30%{content:"Deve|";}
+   31%{content:"Deve|";}
+   32%{content:"Dev|";}
+   33%{content:"De|";}
+   34%{content:"D|";}
+   35%{content:"|";}
+   36%{content:"|";}
+   37%{content:"D|";}
+   38%{content:"De|";}
+   39%{content:"Des|";}
+   40%{content:"Desi|";}
+   41%{content:"Desig|";}
+   42%{content:"Design|";}
+   43%{content:"Designe|";}
+   44%{content:"Designer|";}
+   45%{content:"Designe|";}
+   46%{content:"Design|";}
+   47%{content:"Desig|";}
+   48%{content:"Desi|";}
+   49%{content:"Des|";}
+   50%{content:"De|";}
+   51%{content:"D|";}
+   52%{content:"|";}
+   53%{content:"D|";}
+   54%{content:"De|";}
+   55%{content:"Dev|";}
+   56%{content:"Deve|";}
+   57%{content:"Devel|";}
+   58%{content:"Develo|";}
+   59%{content:"Develop|";}
+   60%{content:"Develope|";}
+   61%{content:"Developer|";}
+   62%{content:"Develope|";}
+   63%{content:"Develop|";}
+   64%{content:"Develo|";}
+   65%{content:"Devel|";}
+   66%{content:"Deve|";}
+   67%{content:"Deve|";}
+   68%{content:"Dev|";}
+   69%{content:"De|";}
+   70%{content:"D|";}
+   71%{content:"|";}
+   72%{content:"|";}
+   73%{content:"D|";}
+   74%{content:"De|";}
+   75%{content:"Des|";}
+   76%{content:"Desi|";}
+   78%{content:"Desig|";}
+   80%{content:"Design|";}
+   82%{content:"Designe|";}
+   84%{content:"Designer|";}
+   86%{content:"Designe|";}
+   88%{content:"Design|";}
+   90%{content:"Desig|";}
+   92%{content:"Desi|";}
+   94%{content:"Des|";}
+   96%{content:"De|";}
+   98%{content:"D|";}
+    100%{content:"|";}
+  
+
+   
+}
